@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "test": "vitest",
+    "test": "vitest --coverage",
+    "test:ci": "vitest --coverage",
     "lint": "eslint .",
     "format": "prettier --write .",
     "prepare": "husky"
