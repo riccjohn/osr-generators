@@ -15,5 +15,14 @@
   },
   "plugins": ["@typescript-eslint"],
   "rules": {},
-  "ignorePatterns": ["setupTests.ts", "public", "coverage", "dist", "yarn.lock"]
+  "ignorePatterns": [
+    "setupTests.ts",
+    "public",
+    "coverage",
+    "dist",
+    "yarn.lock"
+  ],
+  "globals": {
+    "vi": true
+  }
 }
