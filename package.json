@@ -1,8 +1,30 @@
 {
   "name": "osr-generators",
-  "private": true,
-  "version": "0.0.0",
+  "description": "Generators for OSR-style tabletop roleplaying games",
+  "private": false,
+  "version": "1.0.0",
   "type": "module",
+  "author": {
+    "email": "riccjohn@gmail.com",
+    "name": "John Riccardi"
+  },
+  "bugs": "https://github.com/users/riccjohn/projects/5",
+  "keywords": [
+    "osr",
+    "rpg",
+    "ttrpg",
+    "knave",
+    "mork",
+    "borg",
+    "cairn",
+    "d&d",
+    "dungeon",
+    "dragon",
+    "shadowdark",
+    "tabletop",
+    "roleplaying"
+  ],
+  "license": "GPL-3.0-only",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
