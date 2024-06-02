@@ -49,12 +49,14 @@
 
 ## Suppport
 
-- [x] Knave
-- [ ] Shadowdark
+- [x] Knave 1e
+- [ ] Knave 2e
+- [ ] OSE
+- [ ] Basic Fantasy RPG
+- [ ] Outcast Silver Raiders
 - [ ] Cairn
 - [ ] Mork Borg
-- [ ] OSE
-- [ ] Outcast Silver Raiders
+- [ ] Shadowdark
 
 # Setup
 
