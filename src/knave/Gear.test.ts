@@ -3,7 +3,7 @@ import gearList from './data/gear.json'
 import weaponList from './data/weapons.json'
 import Gear from './Gear'
 
-vi.mock('@/dice/Randomization')
+vi.mock('../dice/Randomization')
 
 describe('Gear', () => {
   const itemSlots = 12

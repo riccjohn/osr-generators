@@ -1,7 +1,7 @@
-import armorList from '@/knave/data/armor.json'
-import gearList from '@/knave/data/gear.json'
-import weaponList from '@/knave/data/weapons.json'
-import { Randomization } from '@/dice'
+import armorList from './data/armor.json'
+import gearList from './data/gear.json'
+import weaponList from './data/weapons.json'
+import { Randomization } from '../dice'
 
 class Gear {
   public itemSlots: number

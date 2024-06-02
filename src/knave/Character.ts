@@ -1,5 +1,5 @@
-import { KnaveDescription, KnaveGear } from '@/knave'
-import { Dice } from '@/dice'
+import { KnaveDescription, KnaveGear } from './'
+import { Dice } from '../dice'
 
 class Character {
   public armor: IArmor = {

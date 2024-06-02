@@ -1,7 +1,7 @@
 import Description from './Description'
 import traitsData from './data/traits.json'
 
-vi.mock('@/dice/Randomization')
+vi.mock('../dice/Randomization')
 
 describe('Description', () => {
   describe('traits', () => {

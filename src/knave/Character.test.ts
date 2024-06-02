@@ -1,9 +1,9 @@
 import KnaveCharacter from './Character'
 
-vi.mock('@/dice/Dice')
+vi.mock('../dice/Dice')
 vi.mock('./Description')
 vi.mock('./Gear')
-vi.mock('@/dice/Randomization')
+vi.mock('../dice/Randomization')
 
 describe('KnaveCharacter', () => {
   describe('generate()', () => {

@@ -1,1 +1,1 @@
-export { KnaveCharacter } from '@/knave'
+export { KnaveCharacter } from './knave'

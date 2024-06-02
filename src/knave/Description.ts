@@ -1,5 +1,5 @@
-import traitsData from '@/knave/data/traits.json'
-import { Randomization } from '@/dice'
+import traitsData from './data/traits.json'
+import { Randomization } from '../dice'
 
 class Description {
   public traits

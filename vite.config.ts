@@ -8,7 +8,6 @@ export default defineConfig({
   build: {
     lib: { entry: resolve(__dirname, 'src/index.ts'), formats: ['es'] },
   },
-  resolve: { alias: { '@': resolve('src/') } },
   plugins: [eslint()],
   test: {
     setupFiles: ['./setupTests.ts'],
@@ -22,7 +21,7 @@ export default defineConfig({
       },
       provider: 'v8',
       reporter: ['text', 'json', 'html'],
-      exclude: ['src/main.ts', '**/__mocks__/*'],
+      exclude: ['src/main.ts', '**/__mocks__/*', '**/index.ts'],
     },
   },
 })
