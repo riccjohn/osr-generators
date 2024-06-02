@@ -31,10 +31,10 @@
   ],
   "license": "GPL-3.0-only",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc",
     "test": "vitest --coverage",
     "test:ci": "vitest --coverage",
+    "publish": "npm publish",
     "lint": "eslint .",
     "format": "prettier --write .",
     "prepare": "husky"
