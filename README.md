@@ -1,5 +1,3 @@
-# OSR GENERATORS
-
 <div>
   <h1 align="center">OSR Generators</h1>
   <strong>
@@ -58,7 +56,30 @@
 - [ ] Mork Borg
 - [ ] Shadowdark
 
-# Setup
+# Usage
+
+**Install**
+
+```shell
+npm i osr-generators
+```
+
+**Create a Knave character**
+
+```typescript
+import { KnaveCharacter } from 'osr-generators'
+
+// Generate a new character
+const character = new KnaveCharacter()
+
+// Regenerate character
+character.generate()
+
+// Regenerate traits only
+character.generateTraites()
+```
+
+# Contributing
 
 ## Prerequisites
 
@@ -80,8 +101,6 @@ asdf install
 yarn
 ```
 
-## Building
+### Testing
 
-```shell
-yarn build
-```
+Tests are written using [Vitest](https://vitest.dev/) and can be run with `yarn test`
