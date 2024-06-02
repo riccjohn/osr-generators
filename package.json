@@ -2,7 +2,12 @@
   "name": "osr-generators",
   "description": "Generators for OSR-style tabletop roleplaying games",
   "private": false,
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
   "type": "module",
   "author": {
     "email": "riccjohn@gmail.com",
