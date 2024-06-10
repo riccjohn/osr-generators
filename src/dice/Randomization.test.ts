@@ -27,5 +27,11 @@ describe('Randomization', () => {
 
       expect(uniqueItems.length).toBeGreaterThan(1)
     })
+
+    test('given an empty array, throws error', () => {
+      expect(() => Randomization.getRandomItem([])).toThrow(
+        new Error('Cannot get a random item from an empty array'),
+      )
+    })
   })
 })
