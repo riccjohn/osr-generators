@@ -3,7 +3,7 @@
   "description": "Generators for OSR-style tabletop roleplaying games",
   "repository": {
     "type": "github",
-    "url": "https://github.com/riccjohn/osr-generators"
+    "url": "git+https://github.com/riccjohn/osr-generators.git"
   },
   "private": false,
   "version": "0.0.2",
