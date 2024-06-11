@@ -1,8 +1,10 @@
+import type { GearItem, ArmorItem, WeaponItem } from '../Gear'
+
 class Gear {
   public itemSlots: number
-  public items: IGear[]
-  public armor: IArmor[]
-  public weapon: IWeapon
+  public items: GearItem[]
+  public armor: ArmorItem[]
+  public weapon: WeaponItem
 
   constructor(itemSlots: number) {
     this.itemSlots = itemSlots
