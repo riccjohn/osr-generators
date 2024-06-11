@@ -1,8 +1,25 @@
 import { KnaveDescription, KnaveGear } from './'
 import { Dice } from '../dice'
+import type { Traits } from './Description'
+import type { ArmorItem, GearItem, WeaponItem } from './Gear'
+
+type Abilities = Record<AbilityName, Ability>
+
+type AbilityName =
+  | 'charisma'
+  | 'constitution'
+  | 'dexterity'
+  | 'intelligence'
+  | 'strength'
+  | 'wisdom'
+
+type Ability = {
+  bonus: number
+  defense: number
+}
 
 class Character {
-  public armor: IArmor = {
+  public armor: ArmorItem = {
     count: 0,
     defense: 0,
     name: '',
@@ -11,11 +28,11 @@ class Character {
     type: 'armor',
   }
   public copperPieces: number = 0
-  public items: IGear[] = [{ name: '', count: 0, type: 'food', slots: 0 }]
+  public items: GearItem[] = [{ name: '', count: 0, type: 'food', slots: 0 }]
   public itemSlots: number = 13
   public level: number = 1
   public maxHp: number = 4
-  public traits: ITraits = {
+  public traits: Traits = {
     physique: '',
     face: '',
     skin: '',
@@ -27,17 +44,17 @@ class Character {
     background: '',
     misfortune: '',
   }
-  public weapon: IWeapon = {
-    count: 1,
-    damage: 'd6',
-    hand: 1,
+  public weapon: WeaponItem = {
+    count: 0,
+    damage: '',
+    hand: 0,
     name: '',
     quality: 0,
     slots: 1,
     type: 'weapon',
   }
 
-  private abilities: IAbilities = {
+  private abilities: Abilities = {
     charisma: { bonus: 3, defense: 13 },
     constitution: { bonus: 3, defense: 13 },
     dexterity: { bonus: 3, defense: 13 },
@@ -103,9 +120,22 @@ class Character {
     return Dice.roll(8)
   }
 
-  private generateAbilities = (): IAbilities => {
-    const [charisma, constitution, dexterity, intelligence, strength, wisdom] =
-      Array(6).fill(undefined).map(this.rollAbilityScore)
+  private generateAbilities = (): Abilities => {
+    const {
+      charisma,
+      constitution,
+      dexterity,
+      intelligence,
+      strength,
+      wisdom,
+    } = {
+      charisma: this.rollAbilityScore(),
+      constitution: this.rollAbilityScore(),
+      dexterity: this.rollAbilityScore(),
+      intelligence: this.rollAbilityScore(),
+      strength: this.rollAbilityScore(),
+      wisdom: this.rollAbilityScore(),
+    }
 
     const abilities = {
       charisma: { bonus: charisma, defense: charisma + 10 },
@@ -124,7 +154,7 @@ class Character {
     return Math.min(...rolls)
   }
 
-  private generateTraits = (): ITraits => {
+  private generateTraits = (): Traits => {
     return new KnaveDescription().traits
   }
 }

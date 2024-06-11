@@ -12,12 +12,12 @@ export type GearItem = {
   type: GearType
 }
 
-type ArmorItem = GearItem & {
+export type ArmorItem = GearItem & {
   quality: number
   defense: number
 }
 
-type WeaponItem = GearItem & {
+export type WeaponItem = GearItem & {
   damage: string
   hand: number
   quality: number

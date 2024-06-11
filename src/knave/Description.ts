@@ -13,7 +13,7 @@ export type Noun =
   | 'background'
   | 'misfortune'
 
-type Traits = Record<Noun, string>
+export type Traits = Record<Noun, string>
 
 class Description {
   public traits: Traits
