@@ -1,25 +1,59 @@
 import traitsData from './data/traits.json'
 import { Randomization } from '../dice'
 
+export type Noun =
+  | 'physique'
+  | 'face'
+  | 'skin'
+  | 'hair'
+  | 'clothing'
+  | 'virtue'
+  | 'vice'
+  | 'speech'
+  | 'background'
+  | 'misfortune'
+
+export type Traits = Record<Noun, string>
+
 class Description {
-  public traits
+  public traits: Traits
 
   constructor() {
     this.traits = this.generateRandomTraits()
   }
 
-  private generateRandomTraits() {
-    const nouns: string[] = Object.keys(traitsData)
+  private generateRandomTraits = () => {
+    const defaultTraits: Traits = {
+      physique: '',
+      face: '',
+      skin: '',
+      hair: '',
+      clothing: '',
+      virtue: '',
+      vice: '',
+      speech: '',
+      background: '',
+      misfortune: '',
+    }
 
-    const randomTraits: Record<INoun, string> = nouns.reduce(
-      (acc: Record<string, string>, curr: string) => {
-        acc[curr] = Randomization.getRandomItem(traitsData[curr as INoun])
-        return acc
-      },
-      {},
-    )
+    const parsedTraitData = this.getTraitData()
+
+    const nouns = Object.keys(parsedTraitData)
+
+    const randomTraits = nouns.reduce((acc, curr) => {
+      const currentTrait = curr as Noun
+      const randomTraitValue = Randomization.getRandomItem(
+        parsedTraitData[currentTrait],
+      )
+      acc[currentTrait] = randomTraitValue
+      return acc
+    }, defaultTraits)
 
     return randomTraits
+  }
+
+  private getTraitData = () => {
+    return traitsData satisfies Record<Noun, string[]>
   }
 }
 
