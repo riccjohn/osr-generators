@@ -76,7 +76,7 @@ const character = new KnaveCharacter()
 character.generate()
 
 // Regenerate traits only
-character.generateTraites()
+character.generateTraits()
 ```
 
 # Contributing
