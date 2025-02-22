@@ -1,33 +1,23 @@
 {
   "compilerOptions": {
-    /* Base Options */
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "target": "ES2022",
-    "verbatimModuleSyntax": true,
-    "resolveJsonModule": true,
-    "moduleDetection": "force",
-
-    /* For transpiling with TypeScript */
-    "module": "ES2022",
-    "moduleResolution": "Bundler",
-    "sourceMap": true,
-    "outDir": "dist",
-
-    /* For creating a library */
-    "declaration": true,
-
-    /* For running in DOM */
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
-
-    /* Linting */
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
     "strict": true,
-    "noUncheckedIndexedAccess": true,
+    "noImplicitAny": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "types": ["vitest/globals"]
+    "noUnusedParameters": true
   },
-  "include": ["src/**/*.ts", "docs"],
-  "exclude": ["src/**/*.test.ts"]
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"]
 }

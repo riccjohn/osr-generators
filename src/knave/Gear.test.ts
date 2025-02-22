@@ -1,8 +1,7 @@
 import { vi } from 'vitest'
-import armorList from './data/armor.json'
-import gearList from './data/gear.json'
-import weaponList from './data/weapons.json'
-import Gear, { type GearItem } from './Gear'
+import Gear from './Gear'
+import { armorData, gearData, weaponData } from './data'
+import type { GearItem } from './knaveTypes'
 
 vi.mock('../dice/Randomization')
 
@@ -26,7 +25,7 @@ describe('Gear', () => {
     test('contains 2 pieces of dungeonnering gear', () => {
       const gear = new Gear(itemSlots)
       const dungeoneeringGear = gear.items.filter(item =>
-        gearList.dungeoneeringGear.includes(item),
+        gearData.dungeoneeringGear.includes(item),
       )
       expect(dungeoneeringGear).toHaveLength(2)
     })
@@ -34,7 +33,7 @@ describe('Gear', () => {
     test('has one piece of gear from General Gear Set 1', () => {
       const gear = new Gear(itemSlots)
       const generalGear1 = gear.items.filter(item =>
-        gearList.generalGearSetOne.includes(item),
+        gearData.generalGearSetOne.includes(item),
       )
       expect(generalGear1).toHaveLength(1)
     })
@@ -42,7 +41,7 @@ describe('Gear', () => {
     test('has one piece of gear from General Gear 2', () => {
       const gear = new Gear(itemSlots)
       const generalGear2 = gear.items.filter(item =>
-        gearList.generalGearSetTwo.includes(item),
+        gearData.generalGearSetTwo.includes(item),
       )
       expect(generalGear2).toHaveLength(1)
     })
@@ -51,7 +50,7 @@ describe('Gear', () => {
   describe('armor', () => {
     test('selects a random piece of armor', () => {
       const gear = new Gear(itemSlots)
-      expect(armorList.armor.includes(gear.armor)).toBeTruthy()
+      expect(armorData.armor.includes(gear.armor)).toBeTruthy()
     })
 
     test('adds the armor to the characters gear', () => {
@@ -65,7 +64,7 @@ describe('Gear', () => {
   describe('weapon', () => {
     test('selects a random weapon', () => {
       const gear = new Gear(itemSlots)
-      expect(weaponList.weapons.includes(gear.weapon)).toBeTruthy()
+      expect(weaponData.weapons.includes(gear.weapon)).toBeTruthy()
     })
 
     test('adds the weapon to the characters gear', () => {

@@ -1,11 +1,15 @@
 import { KnaveDescription, KnaveGear } from './'
 import { Dice } from '../dice'
-import type { Traits } from './Description'
-import type { ArmorItem, GearItem, WeaponItem } from './Gear'
+import type {
+  ArmorItem,
+  GearItem,
+  WeaponItem,
+  Traits,
+} from '@/knave/knaveTypes'
 
 type Abilities = Record<AbilityName, Ability>
 
-type AbilityName =
+export type AbilityName =
   | 'charisma'
   | 'constitution'
   | 'dexterity'

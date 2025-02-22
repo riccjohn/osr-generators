@@ -1,5 +1,5 @@
 import { vi } from 'vitest'
-import KnaveCharacter from './Character'
+import KnaveCharacter, { type AbilityName } from './Character'
 
 vi.mock('../dice/Dice')
 vi.mock('./Description')
@@ -21,7 +21,8 @@ describe('KnaveCharacter', () => {
         'intelligence',
         'strength',
         'wisdom',
-      ]
+      ] satisfies AbilityName[]
+
       test.each(abilityNames)(
         'generates a random %s bonus between 1-6 (inclusive)',
         ability => {

@@ -1,12 +1,12 @@
 import { vi } from 'vitest'
-import Description from './Description'
-import traitsData from './data/traits.json'
+import Description from '@/knave/Description'
+import { traitsData } from '@/knave/data'
 
 vi.mock('../dice/Randomization')
 
 describe('Description', () => {
   describe('traits', () => {
-    const nouns = Object.keys(traitsData)
+    const nouns = Object.keys(traitsData) as (keyof typeof traitsData)[]
 
     const description = new Description()
     const traits = description.traits
