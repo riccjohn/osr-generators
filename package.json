@@ -68,11 +68,5 @@
       "pnpm lint --fix",
       "pnpm test:ci"
     ]
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@swc/core",
-      "esbuild"
-    ]
   }
 }
