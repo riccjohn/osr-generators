@@ -4,6 +4,10 @@
     "github.vscode-github-actions",
     "bierner.markdown-preview-github-styles",
     "esbenp.prettier-vscode",
-    "vitest.explorer"
+    "vitest.explorer",
+    "amazonwebservices.amazon-q-vscode",
+    "dracula-theme.theme-dracula",
+    "yoavbls.pretty-ts-errors",
+    "vscodevim.vim"
   ]
 }

@@ -3,7 +3,15 @@
   "postCreateCommand": "pnpm install",
   "customizations": {
     "vscode": {
-      "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"]
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "amazonwebservices.amazon-q-vscode",
+        "dracula-theme.theme-dracula",
+        "YoavBls.pretty-ts-errors",
+        "vscodevim.vim",
+        "vitest.explorer"
+      ]
     }
   }
 }
