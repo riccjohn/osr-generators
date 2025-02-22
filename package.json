@@ -1,6 +1,6 @@
 {
   "name": "osr-generators",
-  "version": "0.0.5-canary.2",
+  "version": "0.1.0",
   "description": "Generators for OSR-style tabletop roleplaying games",
   "repository": {
     "type": "github",
