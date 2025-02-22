@@ -1,19 +1,6 @@
-import traitsData from './data/traits.json'
+import { traitsData } from '@/knave/data'
 import { Randomization } from '../dice'
-
-export type Noun =
-  | 'physique'
-  | 'face'
-  | 'skin'
-  | 'hair'
-  | 'clothing'
-  | 'virtue'
-  | 'vice'
-  | 'speech'
-  | 'background'
-  | 'misfortune'
-
-export type Traits = Record<Noun, string>
+import { Noun, Traits } from '@/knave/knaveTypes'
 
 class Description {
   public traits: Traits

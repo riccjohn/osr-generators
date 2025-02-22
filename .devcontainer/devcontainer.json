@@ -1,7 +1,17 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
 {
-  "name": "Node.js & TypeScript",
-  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
-  "postCreateCommand": "yarn install"
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:18",
+  "postCreateCommand": "pnpm install",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "amazonwebservices.amazon-q-vscode",
+        "dracula-theme.theme-dracula",
+        "YoavBls.pretty-ts-errors",
+        "vscodevim.vim",
+        "vitest.explorer"
+      ]
+    }
+  }
 }

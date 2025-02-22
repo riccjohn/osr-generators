@@ -1,4 +1,4 @@
-import type { GearItem, ArmorItem, WeaponItem } from '../Gear'
+import { ArmorItem, GearItem, WeaponItem } from '@/knave/knaveTypes'
 
 class Gear {
   public itemSlots: number

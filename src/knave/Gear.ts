@@ -1,27 +1,6 @@
-import armorList from './data/armor.json'
-import gearList from './data/gear.json'
-import weaponList from './data/weapons.json'
-import { Randomization } from '../dice'
-
-type GearType = 'food' | 'tool' | 'light' | 'armor' | 'weapon'
-
-export type GearItem = {
-  count: number
-  name: string
-  slots: number
-  type: GearType
-}
-
-export type ArmorItem = GearItem & {
-  quality: number
-  defense: number
-}
-
-export type WeaponItem = GearItem & {
-  damage: string
-  hand: number
-  quality: number
-}
+import { armorData, gearData, weaponData } from '@/knave/data'
+import { Randomization } from '@/dice'
+import type { ArmorItem, GearItem, WeaponItem } from '@/knave/knaveTypes'
 
 class Gear {
   public itemSlots: number
@@ -41,7 +20,7 @@ class Gear {
   private getRandomArmor = (): ArmorItem => {
     const slotsRemaining = this.itemSlots - this.itemSlotsUsed
 
-    const availableArmor = (armorList.armor as ArmorItem[]).filter(armor => {
+    const availableArmor = (armorData.armor as ArmorItem[]).filter(armor => {
       // Ensures there is at least 1 slot remaining for a weapon to be added
       return armor.slots < slotsRemaining
     })
@@ -53,9 +32,9 @@ class Gear {
   }
 
   private getRandomGear(): GearItem[] {
-    const dg = gearList.dungeoneeringGear as GearItem[]
-    const gen1 = gearList.generalGearSetOne as GearItem[]
-    const gen2 = gearList.generalGearSetTwo as GearItem[]
+    const dg = gearData.dungeoneeringGear as GearItem[]
+    const gen1 = gearData.generalGearSetOne as GearItem[]
+    const gen2 = gearData.generalGearSetTwo as GearItem[]
 
     const startingGear: GearItem[] = [
       { name: 'rations', count: 1, slots: 1, type: 'food' },
@@ -84,7 +63,7 @@ class Gear {
 
   private getRandomWeapon = (): WeaponItem => {
     const slotsRemaining = this.itemSlots - this.itemSlotsUsed
-    const availableWeapons = (weaponList.weapons as WeaponItem[]).filter(
+    const availableWeapons = (weaponData.weapons as WeaponItem[]).filter(
       weapon => {
         return weapon.slots <= slotsRemaining
       },
