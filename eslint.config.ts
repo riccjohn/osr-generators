@@ -1,24 +1,35 @@
-import { defineConfig } from 'eslint-define-config'
+import tseslint from '@typescript-eslint/eslint-plugin'
+import tsParser from '@typescript-eslint/parser'
+import prettier from 'eslint-plugin-prettier'
+import eslintConfigPrettier from 'eslint-config-prettier'
 
-export default defineConfig({
-  overrides: [
-    {
-      files: ['*.ts', '*.tsx'],
-      parser: '@typescript-eslint/parser',
-      plugins: ['@typescript-eslint'],
-      extends: [
-        'eslint:recommended',
-        'plugin:@typescript-eslint/recommended',
-        'plugin:prettier/recommended',
-      ],
-      rules: {
-        '@typescript-eslint/no-explicit-any': 'off',
-        '@typescript-eslint/no-unused-vars': 'warn',
+export default [
+  {
+    ignores: ['dist/*', 'node_modules/*', 'build/*', 'coverage/*'],
+  },
+  {
+    files: ['*.ts', '*.tsx'],
+    languageOptions: {
+      parser: tsParser,
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      globals: {
+        window: 'readonly',
+        document: 'readonly',
+        console: 'readonly',
+        module: 'readonly',
+        process: 'readonly',
       },
     },
-  ],
-  env: {
-    node: true,
-    browser: true,
+    plugins: {
+      '@typescript-eslint': tseslint,
+      prettier: prettier,
+    },
+    rules: {
+      ...tseslint.configs.recommended.rules, // TypeScript rules
+      ...eslintConfigPrettier.rules, // Prettier rules
+      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-unused-vars': 'warn',
+    },
   },
-})
+]
