@@ -33,13 +33,13 @@ jobs:
       - name: Publish package to NPM
         run: |
           if [[ "${{ github.ref_name }}" == *-alpha* ]]; then
-            pnpm publish --access public --tag alpha
+            pnpm publish --provenance --access public --tag alpha
           elif [[ "${{ github.ref_name }}" == *-beta* ]]; then
-            pnpm publish --access public --tag beta
+            pnpm publish --provenance --access public --tag beta
           elif [[ "${{ github.ref_name }}" == *-canary* ]]; then
-            pnpm publish --access public --tag canary
+            pnpm publish --provenance --access public --tag canary
           else
-            pnpm publish --access public
+            pnpm publish --provenance --access public
           fi
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
