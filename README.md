@@ -47,14 +47,14 @@
 
 ## Suppport
 
-- [x] Knave 1e
-- [ ] Knave 2e
-- [ ] OSE
-- [ ] Basic Fantasy RPG
-- [ ] Outcast Silver Raiders
-- [ ] Cairn
-- [ ] Mork Borg
-- [ ] Shadowdark
+- [x] [Knave 1e](https://questingbeast.itch.io/knave)
+- [ ] [Knave 2e](https://questingbeast.itch.io/knave-second-edition)
+- [ ] [OSE](https://oldschoolessentials.necroticgnome.com/srd/index.php/Main_Page)
+- [ ] B[asic Fantasy RPG](https://www.basicfantasy.org/)
+- [ ] [Outcast Silver Raiders](https://www.osr-rpg.com/)
+- [ ] [Cairn](https://cairnrpg.com/)
+- [ ] [Mork Borg](https://morkborg.com/)
+- [ ] [Shadowdark](https://www.thearcanelibrary.com/pages/shadowdark)
 
 # Usage
 
@@ -85,7 +85,7 @@ character.generateTraits()
 
 - [asdf version manager](https://asdf-vm.com/)
 - [asdf nodejs plugin](https://github.com/asdf-vm/asdf-nodejs)
-- [yarn](https://yarnpkg.com/)
+- [pnpm](https://pnpm.io/)
 
 ## Install nodejs
 
@@ -98,9 +98,9 @@ asdf install
 ## Install dependencies
 
 ```shell
-yarn
+pnpm i
 ```
 
 ### Testing
 
-Tests are written using [Vitest](https://vitest.dev/) and can be run with `yarn test`
+Tests are written using [Vitest](https://vitest.dev/) and can be run with `pnpm test`
