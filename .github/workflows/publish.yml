@@ -33,18 +33,22 @@ jobs:
       - name: Extract package version
         id: extract_version
         run: echo "version=$(jq -r .version package.json)" >> $GITHUB_OUTPUT
+        env:
+          GITHUB_OUTPUT: $GITHUB_OUTPUT
       - name: Check if version matches tag
         id: check_version
         run: |
           tag_name="${{ github.ref_name }}"
           package_version="${{ steps.extract_version.outputs.version }}"
           if [[ "$tag_name" == "$package_version" || "$tag_name" == *"$package_version-alpha"* || "$tag_name" == *"$package_version-beta"* || "$tag_name" == *"$package_version-canary"* ]]; then
-            echo "::set-output name=should_publish::true"
+            echo "should_publish=true" >> $GITHUB_OUTPUT
           else
-            echo "::set-output name=should_publish::false"
+            echo "should_publish=false" >> $GITHUB_OUTPUT
           fi
+        env:
+          GITHUB_OUTPUT: $GITHUB_OUTPUT
       - name: Publish package to NPM
-        if: steps.check_version.outputs.should_publish == 'true'
+        if: ${{ steps.check_version.outputs.should_publish == 'true' }}
         run: |
           if [[ "${{ github.ref_name }}" == *-alpha* ]]; then
             pnpm publish --access public --tag alpha
