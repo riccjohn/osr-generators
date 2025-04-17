@@ -50,7 +50,7 @@
 - [x] [Knave 1e](https://questingbeast.itch.io/knave)
 - [ ] [Knave 2e](https://questingbeast.itch.io/knave-second-edition)
 - [ ] [OSE](https://oldschoolessentials.necroticgnome.com/srd/index.php/Main_Page)
-- [ ] B[asic Fantasy RPG](https://www.basicfantasy.org/)
+- [ ] [Basic Fantasy RPG](https://www.basicfantasy.org/)
 - [ ] [Outcast Silver Raiders](https://www.osr-rpg.com/)
 - [ ] [Cairn](https://cairnrpg.com/)
 - [ ] [Mork Borg](https://morkborg.com/)
