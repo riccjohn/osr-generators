@@ -55,6 +55,7 @@
 - [ ] [Cairn](https://cairnrpg.com/)
 - [ ] [Mork Borg](https://morkborg.com/)
 - [ ] [Shadowdark](https://www.thearcanelibrary.com/pages/shadowdark)
+- [ ] [Mythic Bastionland](https://www.drivethrurpg.com/en/product/514996/mythic-bastionland)
 
 # Usage
 
